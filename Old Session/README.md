@@ -11,7 +11,7 @@ A simple comment-board web app lets users register, log in, and see a
 there's a hidden `/sessions` endpoint — and that endpoint turns out to leak
 **every active session on the server**, including the admin's.
 
-![Homepage while logged in as a normal user](images/01-homepage-syaadila.png)
+![Homepage while logged in as a normal user](01-homepage-syaadila.png)
 
 ## TL;DR
 
@@ -68,7 +68,7 @@ is enough — the server looks up that key server-side, finds it mapped to
 
 The homepage now greets `admin` and reveals the flag directly:
 
-![Homepage after swapping to the admin session, showing the flag](images/02-homepage-admin-flag.png)
+![Homepage after swapping to the admin session, showing the flag](02-homepage-admin-flag.png)
 
 ```
 academy{s3t_s3ss10n_3xp1rat10n5_e3a46efc}
