@@ -56,7 +56,7 @@ The hash is SHA-256, so it can be run through
 [CrackStation](https://crackstation.net/), which resolves it against known
 wordlists/rainbow tables:
 
-![Cracking the SHA-256 hash on CrackStation](images/01-crackstation.png)
+![Cracking the SHA-256 hash on CrackStation](01-crackstation.png)
 
 ```
 c20fa16907343eef642d10f0bdb81bf629e6aaf6c906f26eabda079ca9e5ab67e → apple@123
@@ -70,7 +70,7 @@ Logging in with `admin` / `apple@123` succeeds and — since this account has
 Using the browser DevTools **Application → Cookies** panel, the `session`
 cookie value can be copied directly from the response:
 
-![Session cookie value in browser DevTools](images/02-cookie-value.png)
+![Session cookie value in browser DevTools](02-cookie-value.png)
 
 ```
 eJwty0EKgCAQAMC_7FmiFVP0MyG1ieCqqJ2iv-eh68A8kEoIdIKDy6dOIKCMunc6Go
@@ -98,7 +98,7 @@ flask-unsign --decode --cookie '<cookie value>'
 
 Running it against the captured cookie:
 
-![flask-unsign --decode revealing the session contents](images/03-flask-unsign-decode.png)
+![flask-unsign --decode revealing the session contents](03-flask-unsign-decode.png)
 
 ```json
 {
@@ -119,7 +119,7 @@ Entering `6472` on the `/two_fa` page (well within the challenge's OTP
 expiry window) completes the login as `admin`, and the home page reveals
 the flag:
 
-![Successful login and flag](images/04-flag.png)
+![Successful login and flag](04-flag.png)
 
 ```
 academy{n0_r4t3_n0_4uth_24652f75}
