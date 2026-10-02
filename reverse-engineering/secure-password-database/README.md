@@ -1,5 +1,6 @@
-# Heartbleed (Reverse Engineering)
+# Secure Password Database - Medium
 
+**Category:** `Reverse Engineering.`
 **Flag:** `academy{d0nt_trust_us3rs}`
 
 ## 1. First: Run the program
@@ -191,7 +192,7 @@ In simple words: start with `h = 0x1505`. Then for every character,
 
 ## 5. Understand 0x1505
 
-You will see a lot of values beginning with `0x`. That means the number
+You will see many values beginning with `0x`. That means the number
 is written in hexadecimal.
 
 For example:
@@ -204,10 +205,6 @@ means decimal:
 ```
 
 And `0x1505` is a hexadecimal number used as the initial hash value.
-
-You don't necessarily need to convert every hex number immediately.
-When reversing, first ask: *"Is this value being used as data, an
-address, a flag, or a constant?"*
 
 ## 6. Find make_secret()
 
@@ -246,7 +243,7 @@ Then:
 xor eax,0xffffffaa
 ```
 
-This tells us the byte is being XORed with `0xAA`.
+This means the byte is XORed with `0xAA`.
 
 So we can simplify the important part to:
 
