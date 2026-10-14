@@ -1,7 +1,6 @@
-# CTF Writeup: Recovering Data from Binary Strings (`digits.bin`)
 
-## Challenge Details
-- **Category:** Forensics / Data Recovery / Encoding
+## Binary Digits - Easy
+- **Category:** Forensics 
 - **File Provided:** `digits.bin`
 - **Tool Used:** [CyberChef](https://gchq.github.io/CyberChef/)
 
@@ -47,15 +46,17 @@ This confirms that the stream of `1`s and `0`s represents a complete, valid JPEG
 3. Configure the operation settings:
    - **Byte length:** `8` (each character group of 8 bits represents 1 byte)
    - **Delimiter:** `None` (there are no spaces or commas between the bits)
+     
+![cyberchef input](images/01-cyberchef.png)
 
 ### Step 3: Extract / View the Image
 Once the `From Binary` operation processes the data, you can obtain the image in either of two ways:
 
-- **Method A (Direct Download):** Click the **Save output to file** icon (floppy disk icon above the Output pane) and save the file as `flag.jpg`.
-- **Method B (Preview in Browser):** Add the `Render Image` operation to your recipe chain and set the format to `JPEG/JPG` to inspect the flag directly inside CyberChef.
+Click the **Save output to file** icon (floppy disk icon above the Output pane) and save the file as `flag.jpg`.
 
 ---
 
 ## 3. Flag Extraction
 
 Opening `flag.jpg` reveals the rendered image containing the CTF flag.
+![image output](images/02-image-output.png)
